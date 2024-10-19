@@ -35,9 +35,6 @@ To experience the application, open the link above in your web browser.
 
 If you'd like to contribute to this project, please open an issue or submit a pull request.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ## Author
 
