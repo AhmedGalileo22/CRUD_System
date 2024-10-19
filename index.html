@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="w-75 mx-auto bg-info p-2 rounded my-2">
+      <h1 class="text-center">CRUD System</h1>
+
+      <div class="form-floating my-1">
+        <input
+          oninput="validationinput(this , 'msgName' )"
+          type="text"
+          class="form-control"
+          id="productName"
+          placeholder=""
+        />
+        <label for="productName">product Name</label>
+        <p id="msgName" class="alert alert-danger d-none">this invalid</p>
+      </div>
+
+      <div class="form-floating my-1">
+        <input
+          oninput="validationinput(this, 'msgPrice')"
+          type="text"
+          class="form-control"
+          id="productPrice"
+          placeholder=""
+        />
+        <label for="productPrice">product Price</label>
+        <p id="msgPrice" class="alert alert-danger d-none">this invalid</p>
+      </div>
+
+      <div class="form-floating my-1">
+        <input
+          oninput="validationinput(this, 'msgCategory')"
+          list="category"
+          type="text"
+          class="form-control"
+          id="productCategory"
+          placeholder=""
+        />
+        <label for="productCategory">product Category </label>
+        <datalist id="category">
+          <option value="Tv" />
+          <option value="Mobile" />
+          <option value="Screens" />
+          <option value="Electronic" />
+        </datalist>
+        <p id="msgCategory" class="alert alert-danger d-none">this invalid</p>
+      </div>
+
+      <div class="form-floating my-1">
+        <textarea
+          oninput="validationinput(this, 'msgDescription')"
+          style="height: 100px"
+          class="form-control"
+          id="productDescription"
+          placeholder=""
+        ></textarea>
+        <label for="productDescription">product Description </label>
+        <p id="msgDescription" class="alert alert-danger d-none">
+          this invalid
+        </p>
+      </div>
+
+      <div class="form-floating my-1">
+        <input
+          oninput="validationinput(this, 'msgtImage')"
+          type="file"
+          class="form-control"
+          id="productImage"
+          placeholder=""
+        />
+        <label for="productImage">product Image</label>
+        <p id="msgtImage" class="alert alert-danger d-none">this invalid</p>
+      </div>
+
+      <div class="mt-3">
+        <button onclick="addProduct()" id="btnAdd" class="btn btn-primary">
+          add Product
+        </button>
+        <button
+          onclick="updateData()"
+          id="btnUpdate"
+          class="btn btn-warning d-none"
+        >
+          updata Product
+        </button>
+      </div>
+    </div>
+    <input
+      oninput="displayData()"
+      id="searchInput"
+      type="search"
+      class="form-control w-50 mx-auto my-2"
+      placeholder="Search By Name..."
+    />
+    <div>
+      <table class="table text-center">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="tableData"></tbody>
+      </table>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
